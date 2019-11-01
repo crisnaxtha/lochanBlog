@@ -7,6 +7,8 @@ import { FooterComponent } from './components/layout/footer/footer.component';
 import { HomeComponent } from './components/site/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 
+import { BlogService } from './services/blog.service';
+
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: '', redirectTo:'/home', pathMatch:'full'}
@@ -23,7 +25,7 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [BlogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-export let lochanBlog = {
-    serverApiUrl: 'https://jsonplaceholder.typicode.com/',
+export let configServerUrl = {
+    serverUrl: 'https://jsonplaceholder.typicode.com/',
 
 }
