@@ -10,7 +10,7 @@ export class BlogService {
 
   blog(value) {
     //debugger;
-    console.log("the url is", configServerUrl.serverUrl );
-    return this.http.get( configServerUrl.serverUrl );
+    console.log("the url is", configServerUrl.serverUrl.concat('/posts') );
+    return this.http.get( configServerUrl.serverUrl.concat('/posts') );
   }
 }
