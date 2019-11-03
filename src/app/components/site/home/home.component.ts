@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../../../services/blog.service';
-
+import { Post } from '../../../models/post.model';
+import { POST } from '../../../mocks/post';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,14 @@ import { BlogService } from '../../../services/blog.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  posts = POST;
 
-  constructor(private _blog : BlogService) { }
+
+  constructor() { }
 
   ngOnInit() {
+    console.log(this.posts)
+
   }
 
 }
