@@ -8,9 +8,9 @@ export class BlogService {
 
   constructor(private http: HttpClient) { }
 
-  blog(value) {
+  getAllPost() {
     //debugger;
-    console.log("the url is", configServerUrl.serverUrl.concat('/posts') );
-    return this.http.get( configServerUrl.serverUrl.concat('/posts') );
+    console.log("the url is", configServerUrl.serverUrl.concat('posts') );
+    return this.http.get( configServerUrl.serverUrl.concat('posts') );
   }
 }
