@@ -20,11 +20,17 @@ export class HomeComponent implements OnInit {
   }
 
   showAllPost() {
-    this._blogService.getAllPost().subscribe(data => {
+    this._blogService.getPosts().subscribe(data => {
       console.log('the data is ', data);
       this.posts = data;
     }, error=>{
       console.log('the error is', error);
+    })
+  }
+
+  getSinglePost() {
+    this._blogService.getPostById(value).subscribe(data =>{
+      console.log(data);
     })
   }
 
