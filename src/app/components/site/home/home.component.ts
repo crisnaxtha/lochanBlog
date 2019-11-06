@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   }
 
   getSinglePost() {
-    this._blogService.getPostById(value).subscribe(data =>{
+    this._blogService.getPostById(1).subscribe(data =>{
       console.log(data);
     })
   }
