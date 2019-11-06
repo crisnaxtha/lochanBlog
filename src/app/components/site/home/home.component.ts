@@ -9,10 +9,8 @@ import { POST } from '../../../mocks/post';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  posts : any;
-  constructor(private _blogService : BlogService) {
-    this.posts = new Post;
-  }
+  posts: any;
+  constructor(private blogService: BlogService) {}
 
   ngOnInit() {
     console.log(this.posts);
@@ -20,17 +18,18 @@ export class HomeComponent implements OnInit {
   }
 
   showAllPost() {
-    this._blogService.getPosts().subscribe(data => {
+    this.blogService.getPosts().subscribe(data => {
       console.log('the data is ', data);
       this.posts = data;
-    }, error=>{
+    }, error => {
       console.log('the error is', error);
     })
   }
 
-  getSinglePost() {
-    this._blogService.getPostById(1).subscribe(data =>{
-      console.log(data);
+  getSinglePost(post: any): void {
+    this.blogService.getPostById(post.id)
+    .subscribe(data => {
+      console.log(post.id);
     })
   }
 
