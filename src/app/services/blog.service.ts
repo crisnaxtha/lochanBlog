@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { configServerUrl } from '../app.config';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,14 +15,10 @@ export class BlogService {
     return this.http.get( configServerUrl.serverUrl.concat('posts') );
   }
 
-  getPostById(id:number) {
+  getPostById(id:any) {
      //debugger;
-     console.log("the url is", configServerUrl.serverUrl.concat('posts'), id );
-     return this.http.get( configServerUrl.serverUrl.concat('posts'), id );
+     console.log("the url is", configServerUrl.serverUrl.concat('posts/').concat(id) );
+     return this.http.get( configServerUrl.serverUrl.concat('posts/').concat(id));
   }
 
-  public firstPage: string = "";
-  public prevPage: string = "";
-  public nextPage: string = "";
-  public lastPage: string = "";
 }

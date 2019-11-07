@@ -7,17 +7,12 @@ import { HeaderComponent } from './components/layout/header/header.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
 
-
 import { HomeComponent } from './components/site/home/home.component';
-
-import { RouterModule, Routes } from '@angular/router';
+import { PostDetailsComponent } from './components/site/post-details/post-details.component';
 
 import { BlogService } from './services/blog.service';
 
-const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent},
-  { path: '', redirectTo:'/home', pathMatch:'full'}
-];
+import { AppRoutingModule }     from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,10 +21,11 @@ const appRoutes: Routes = [
     FooterComponent,
     SidebarComponent,
     HomeComponent,
+    PostDetailsComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    AppRoutingModule,
     HttpClientModule,
   ],
   providers: [BlogService],

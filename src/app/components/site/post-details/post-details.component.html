@@ -4,7 +4,7 @@
     <!-- Blog entries -->
     <div class="w3-col l8 s12">
       <!-- Blog entry -->
-      <div class="w3-container w3-white w3-margin w3-padding-large" *ngFor ="let post of posts" routerLink = "/post/{{ post?.id }}">
+      <div class="w3-container w3-white w3-margin w3-padding-large" *ngIf ="post">
         <div class="w3-center">
           <h3 (click)="getSinglePost(post)">{{ post?.title }}</h3>
           <h5>Title description, <span class="w3-opacity">{{post?.userId}}</span></h5>
