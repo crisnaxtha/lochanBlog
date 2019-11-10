@@ -9,28 +9,18 @@ import { POST } from '../../../mocks/post';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  posts: any;
+  posts: Post[];
   constructor(private blogService: BlogService) {}
 
   ngOnInit() {
     console.log(this.posts);
-    this.showAllPost();
+    this.getPosts();
   }
 
-  showAllPost() {
-    this.blogService.getPosts().subscribe(data => {
-      console.log('the data is ', data);
-      this.posts = data;
-    }, error => {
-      console.log('the error is', error);
-    })
+  getPosts() {
+    this.blogService.getPosts()
+    .subscribe(data => { this.posts = data; },
+       error => { console.log('the error is', error); }
+       );
   }
-
-  getSinglePost(post: any): void {
-    this.blogService.getPostById(post.id)
-    .subscribe(data => {
-      console.log(post.id);
-    })
-  }
-
 }
