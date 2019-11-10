@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Post } from '../../../models/post.model';
 import { BlogService } from '../../../services/blog.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-post-details',
@@ -13,8 +14,9 @@ export class PostDetailsComponent implements OnInit {
   @Input() post: Post;
 
   constructor(
-    private route:ActivatedRoute,
+    private route: ActivatedRoute,
     private blogService: BlogService,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -26,5 +28,10 @@ export class PostDetailsComponent implements OnInit {
     this.blogService.getPostById(id)
       .subscribe(post => this.post = post);
   }
+
+  goBack(): void {
+    this.location.back();
+  }
+
 
 }

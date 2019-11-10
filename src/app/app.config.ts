@@ -1,4 +1,4 @@
 export let configServerUrl = {
-    serverUrl: 'https://jsonplaceholder.typicode.com/',
+    serverUrl: 'https://jsonplaceholder.typicode.com',
 
 }
